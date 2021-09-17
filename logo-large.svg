@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="16.667 16.667 300.006 116.669" xmlns="http://www.w3.org/2000/svg">
+  <g transform="matrix(0.706623, 0, 0, 0.706623, 1.788009, -83.991844)" style="">
+    <line style="stroke-linecap: round; stroke: rgb(178, 34, 34); stroke-width: 10px;" x1="100.002" y1="166.67" x2="366.674" y2="166.67"/>
+    <line style="stroke-linecap: round; stroke: rgb(178, 34, 34); stroke-width: 10px;" x1="233.338" y1="166.67" x2="233.338" y2="266.672"/>
+    <line style="stroke-linecap: round; stroke: rgb(178, 34, 34); stroke-width: 10px;" x1="100.002" y1="166.67" x2="100.002" y2="200.004"/>
+    <line style="stroke-linecap: round; stroke: rgb(178, 34, 34); stroke-width: 10px;" x1="366.674" y1="166.67" x2="366.674" y2="200.004"/>
+    <line style="stroke-linecap: round; stroke: rgb(178, 34, 34); stroke-width: 10px;" x1="100.002" y1="200.004" x2="83.335" y2="233.338"/>
+    <line style="stroke-linecap: round; stroke: rgb(178, 34, 34); stroke-width: 10px;" x1="100.002" y1="200.004" x2="116.669" y2="233.338"/>
+    <line style="stroke-linecap: round; stroke: rgb(178, 34, 34); stroke-width: 10px;" x1="83.335" y1="233.338" x2="116.669" y2="233.338"/>
+    <line style="stroke-linecap: round; stroke: rgb(178, 34, 34); stroke-width: 10px;" x1="366.674" y1="200.004" x2="350.007" y2="233.338"/>
+    <line style="stroke-linecap: round; stroke: rgb(178, 34, 34); stroke-width: 10px;" x1="366.674" y1="200.004" x2="383.341" y2="233.338"/>
+    <line style="stroke-linecap: round; stroke: rgb(178, 34, 34); stroke-width: 10px;" x1="350.007" y1="233.338" x2="383.341" y2="233.338"/>
+    <line style="stroke-linecap: round; stroke: rgb(178, 34, 34); stroke-width: 10px;" x1="233.338" y1="266.672" x2="200.004" y2="283.339"/>
+    <line style="stroke-linecap: round; stroke: rgb(178, 34, 34); stroke-width: 10px;" x1="233.338" y1="266.672" x2="266.672" y2="283.339"/>
+    <line style="stroke-linecap: round; stroke: rgb(178, 34, 34); stroke-width: 10px;" x1="200.004" y1="283.339" x2="266.672" y2="283.339"/>
+  </g>
+</svg>
