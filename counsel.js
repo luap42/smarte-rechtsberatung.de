@@ -43,7 +43,7 @@ const expl2_options = [
         'Sinnvoll wäre vielleicht auch eine einvernehmliche Lösung, wenn Sie nicht klagen wollen.'
     ],
     [
-        'Es würde nämlich gegen die Menschenwürde verstoßen',
+        'Es würde nämlich gegen die Menschenwürde verstoßen.',
         'Etwas anderes gilt nur, wenn Sie dies im Vertrag vereinbart haben.',
         'Eine EU-Richtlinie von 2003 verbietet dies ausdrücklich.',
         'Das verstößt gegen Treu und Glauben.',
