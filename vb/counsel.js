@@ -21,7 +21,7 @@ $('#btn').addEventListener('click', (e)=> {
 
     const answer_key = Math.random();
 
-    const time_key = Math.floor(Math.random()*750);
+    const time_key = Math.floor(Math.random()*10000);
 
     const is_abuse = Math.random() < abuse_likelyhood;
 
