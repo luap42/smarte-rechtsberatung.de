@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smarte Rechtsberatung</title>
+
+    <link rel="stylesheet" href="../style.css">
+    <script src="counsel.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <img src="../logo.svg" alt="Logo: Smarte Rechtsberatung">
+        </div>
+    </header>
+    <main class="container">
+        <img src="../logo-large.svg" alt>
+        <h1>Smarte Rechtsberatung. Kostenlos. Schnell.</h1>
+        <p class="lead">Unsere KI-gestützte, smarte Rechtsberatung unterstützt Sie kostenlos und schnell bei Ihren Rechtsfragen.</p>
+
+        <h2>Geben Sie Ihre Rechtsfrage hier ein:</h2>
+
+        <div class="form">
+            <label>Hat meine Verfassungsbeschwerde Aussicht auf Erfolg?</label>
+            <button id="btn">Prüfen</button>
+        </div>
+
+        <div class="reply-area hidden">
+            <h2>Und erhalten Sie hier Ihre Antwort:</h2>
+            <div class="loading now">
+                <span class="loading-icon"></span>
+                <div class="wait-line">Bitte haben Sie einen Moment Geduld.<br>Wir berechnen Ihre Antwort.</div>
+            </div>
+            <div class="answer">
+                <h3>Ergebnis:</h3>
+                <p id="short-reply"></p>
+                <h3>Begründung:</h3>
+                <p id="expl"></p>
+                <p id="abuse"></p>
+
+                <div class="share">
+                    <h4>Hilfreich?</h4>
+                    <a class="tweet-btn"
+                    href="https://twitter.com/intent/tweet?text=Habe gerade hilfreiche und kostenlose Rechtsberatung auf smarte-rechtsberatung.de (von @luap42) erhalten. Probiere es auch aus." target="_blank">Weitersagen!</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            &copy; 2021, Paul Strobach, Stahnsdorfer Straße 144b, 14482 Potsdam. Diese Webseite erteilt keine Rechtsberatung im Sinne des § 2 RDG; alle Antworten werden zufällig und ohne Einzelfallprüfung ausgewählt. Wir übernehmen keine Haftung für die Gültigkeit der Antworten, sowie für Schäden, die aufgrund der Befolgung dieser entstehen können. Es werden keine Informationen an den Server gesendet; wir verarbeiten daher keine personenbezogenen Daten. Weitere Textideen bitte per E-Mail an strobach1 unter uni-potsdam.de
+        </div>
+    </footer>
+</body>
+</html>
