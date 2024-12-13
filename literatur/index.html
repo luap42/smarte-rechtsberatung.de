@@ -7,7 +7,7 @@
     <title>Smarte Rechtsberatung</title>
 
     <link rel="stylesheet" href="../style.css">
-    <script src="counsel.js" defer></script>
+    <script src="generator.js" defer></script>
 </head>
 <body>
     <header>
@@ -30,14 +30,14 @@
                 <option value="klaukurs">Klempner - Praxis im Recht</option>
                 <option value="nomnom">NOMNOM-Kommentar</option>
             </select>
-            <input id="input" placeholder="Autor*innen" id="authors">
-            <input id="input" placeholder="Buchtitel" id="title">
-            <input id="input" placeholder="ggf. Kommentar/Untertitel" id="subtitle">
-            <input id="input" placeholder="ggf. Auflage" id="edition">
-            <input id="input" placeholder="ggf. Jahreszahl" id="year">
+            <input placeholder="Autor*innen" id="authors">
+            <input placeholder="Buchtitel" id="title">
+            <input placeholder="ggf. Kommentar/Untertitel" id="subtitle">
+            <input placeholder="ggf. Auflage" id="edition">
+            <input placeholder="ggf. Jahreszahl" id="year">
             <p>Für unsere Reihe <strong>Back-Rezepte im TV</strong> benötigen wir außerdem die folgenden Angaben</p>
-            <input id="input" placeholder="Abkürzungen 1, 2 und 3 (getrennt durch '|')" id="abbrevs">
-            <input id="input" placeholder="Inhaltsangaben (getrennt durch '|')" id="contents">
+            <input placeholder="Abkürzungen 1, 2 und 3 (getrennt durch '|')" id="abbrevs">
+            <input placeholder="Inhaltsangaben (getrennt durch '|')" id="contents">
             <button id="btn">Suchen</button>
         </div>
 
@@ -50,7 +50,13 @@
             <div class="answer">
                 <h3>Wir haben das Buch gefunden! \o/</h3>
 
-                <img id="target" alt>
+                <canvas width="750" height="1000" id="canv" style="width: 500px; height: auto;"></canvas>
+
+                <div class="share">
+                    <h4>Gefunden, was Sie suchen?</h4>
+                    <a class="tweet-btn" id="copy">Buch kopieren</a>
+                    <a class="tweet-btn" id="download">Buch herunterladen</a>
+                </div>
             </div>
         </div>
     </main>
