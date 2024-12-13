@@ -77,7 +77,8 @@ h2 {
     margin-bottom: 1rem;
     font-weight: bold;
 }
-.form input {
+.form input,
+.form select {
     font: inherit;
     border: none;
     margin-bottom: 1rem;

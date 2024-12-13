@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smarte Rechtsberatung</title>
+
+    <link rel="stylesheet" href="../style.css">
+    <script src="counsel.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <img src="../logo.svg" alt="Logo: Smarte Rechtsberatung">
+        </div>
+    </header>
+    <main class="container">
+        <h1>Smarte Rechts-Fachliteratur. Kostenlos. Schnell.</h1>
+        <p class="lead">Dank unserer Kooperation mit nahmhaften Verlagen wie ICH BACK oder NOMNOM erhalten Sie hier jede Fachliteratur, die Sie sich erträumen könnten. Und das für immer kostenfrei!</p>
+
+        <h2>Geben Sie hier an, welches Buch Sie suchen:</h2>
+
+        <div class="form">
+            <select id="template">
+                <option value="" selected disabled>Wählen Sie eine Reihe...</option>
+                <option value="beck_dtv">Back-Rezepte im TV</option>
+                <option value="beck_rot">ICH BACK</option>
+                <option value="beck_gelb">Back'sche Reibe</option>
+                <option value="klaukurs">Klempner - Praxis im Recht</option>
+                <option value="nomnom">NOMNOM-Kommentar</option>
+            </select>
+            <input id="input" placeholder="Autor*innen" id="authors">
+            <input id="input" placeholder="Buchtitel" id="title">
+            <input id="input" placeholder="ggf. Kommentar/Untertitel" id="subtitle">
+            <input id="input" placeholder="ggf. Auflage" id="edition">
+            <input id="input" placeholder="ggf. Jahreszahl" id="year">
+            <p>Für unsere Reihe <strong>Back-Rezepte im TV</strong> benötigen wir außerdem die folgenden Angaben</p>
+            <input id="input" placeholder="Abkürzungen 1, 2 und 3 (getrennt durch '|')" id="abbrevs">
+            <input id="input" placeholder="Inhaltsangaben (getrennt durch '|')" id="contents">
+            <button id="btn">Suchen</button>
+        </div>
+
+        <div class="reply-area hidden">
+            <h2>Ihr Suchergebnis:</h2>
+            <div class="loading now">
+                <span class="loading-icon"></span>
+                <div class="wait-line">Bitte haben Sie einen Moment Geduld.<br>Wir suchen gerade Ihr Buch...</div>
+            </div>
+            <div class="answer">
+                <h3>Wir haben das Buch gefunden! \o/</h3>
+
+                <img id="target" alt>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            &copy; 2024, Paul Strobach, Stahnsdorfer Straße 144b, 14482 Potsdam. Vielen Dank an <a href="https://legal.social/@ManTechnologist">@ManTechnologist@legal.social</a> für die Bereitstellung der großartigen Vorlagen.
+        </div>
+    </footer>
+</body>
+</html>
