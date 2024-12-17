@@ -27,10 +27,11 @@ let load_base = (image_file, cb) => {
     base_image.src = image_file
 }
 
-let write_text = (text, x, y, font, color, align) => {
+let write_text = (text, x, y, font, color, align, letterSpacing) => {
     ctx.font = font
     ctx.fillStyle = color
     ctx.textAlign = align
+    ctx.letterSpacing = letterSpacing || '0px'
     ctx.fillText(text, x, y)
 }
 
@@ -79,9 +80,39 @@ function printAtWordWrap( context , text, x, y, lineHeight, fitWidth)
 let generators = {
     beck_dtv: () => {
         load_base('/literatur/templates/beck_dtv.png', () => {
-            write_text(authors.value, 385, 110, 'bold 40px Times', '#dddddd', 'center')
-            write_wrapped_text(title.value, 385, 265, 468, 'bold 100px Times', 120, '#000000', 'center')
-            write_wrapped_text(subtitle.value, 385, 525, 400, 'bold 30px Times', 30, '#ffffff', 'center')
+            write_text(title.value, 375, 300, '55px Arial', '#ff0000', 'center')
+            write_text(edition.value, 300, 930, '45px Arial', '#ff0000', 'right')
+            write_text(year.value, 375, 990, '45px Arial', '#ff0000', 'center')
+
+            let head_parts = abbrevs.value.split("|")
+            let colors = ['#a0892ccc', '#b61d2acc', '#0e1f46cc', '#fcc204cc', '#e8cea0cc', '#94c120cc', '#5b2482cc', '#f49d00cc', '#0580c6cc', '#ed6505cc', '#058a48cc', '#de0286']
+
+            total_width = 0
+
+            for (const part of head_parts) {
+                ctx.font = '220px Arial'
+                ctx.letterSpacing = '-20px'
+                total_width += ctx.measureText(part).width * 0.8
+            }
+
+            
+            begin = 360 - (total_width / 2)
+            i = 0
+
+            for (const part of head_parts) {
+                write_text(part, begin, 200, '220px Arial', colors[i % colors.length], 'left', '-20px')
+                begin += ctx.measureText(part).width * 0.8
+                i += 1
+            }
+
+            let content_parts = contents.value.split("|")
+
+            y = 380
+
+            for (const part of content_parts) {
+                write_text(part, 375, y, '40px Arial', '#000000', 'center')
+                y += 55
+            }
         })
     },
     beck_rot: () => {
@@ -126,7 +157,6 @@ btn.addEventListener('click', () => {
 
     window.setTimeout(() => {
         $('.loading').classList.remove('now');
-        $('#short-reply').innerText = reply_options[answer_key];
     }, time_key * 2);
 })
 
