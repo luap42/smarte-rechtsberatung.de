@@ -1,6 +1,8 @@
 var canv = document.getElementById('canv')
 var ctx = canv.getContext('2d')
 
+
+var section
 var authors
 var title
 var subtitle
@@ -149,13 +151,43 @@ let generators = {
             write_wrapped_text(contents.value, 50, 875, 900, 'bold 28px Arial', 40, '#ffffff', 'left')
             write_text(edition.value, 70, 1050, 'bold 40px Arial', '#ffffff', 'left')
         })
+    },
+    njw: () => {
+        load_base('/literatur/templates/njw.png', () => {
+            write_text(title.value, 80, 950, 'bold 55px Arial', '#000000', 'left')
+            write_text(year.value, 1600, 950, 'bold 45px Arial', '#000000', 'right')
+
+            author1 = section.querySelector('[data-field="author-1"]')
+            title1 = section.querySelector('[data-field="title-1"]')
+
+            author2 = section.querySelector('[data-field="author-2"]')
+            title2 = section.querySelector('[data-field="title-2"]')
+
+            author3 = section.querySelector('[data-field="author-3"]')
+            title3 = section.querySelector('[data-field="title-3"]')
+
+            author4 = section.querySelector('[data-field="author-4"]')
+            title4 = section.querySelector('[data-field="title-4"]')
+
+            write_text(author1.value, 666, 1250, 'italic 35px Times', '#000000', 'left')
+            write_wrapped_text(title1.value, 666, 1290, 666, 'bold 35px Times', 38, '#000000', 'left')
+
+            write_text(author2.value, 666, 1450, 'italic 35px Times', '#000000', 'left')
+            write_wrapped_text(title2.value, 666, 1490, 666, 'bold 35px Times', 38, '#000000', 'left')
+
+            write_text(author3.value, 666, 1650, 'italic 35px Times', '#000000', 'left')
+            write_wrapped_text(title3.value, 666, 1690, 666, 'bold 35px Times', 38, '#000000', 'left')
+
+            write_text(author4.value, 666, 1850, 'italic 35px Times', '#000000', 'left')
+            write_wrapped_text(title4.value, 666, 1890, 666, 'bold 35px Times', 38, '#000000', 'left')
+        })
     }
 }
 
 document.querySelectorAll('.search-btn').forEach((btn) => {
     btn.addEventListener('click', () => {
     let template = document.querySelector('[name="template"]:checked')
-    let section = document.querySelector('[data-section="' + template.value + '"]')
+    section = document.querySelector('[data-section="' + template.value + '"]')
 
     authors = section.querySelector('[data-field="authors"]')
     title = section.querySelector('[data-field="title"]')

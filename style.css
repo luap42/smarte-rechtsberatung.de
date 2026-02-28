@@ -272,3 +272,24 @@ h4 {
 .lit-form .reply-area .answer img {
     max-width: 100%;
 }
+
+.form-journal-grid {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.form-journal-grid-row {
+    display: flex;
+}
+
+.form-journal-grid-row input {
+    flex-grow: 2;
+    width: 100%;
+    margin: 0.5rem;
+    width: 0;
+}
+
+.form-journal-grid-row input.author-field {
+    flex-grow: 1;
+}

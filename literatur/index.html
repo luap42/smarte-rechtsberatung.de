@@ -29,6 +29,7 @@
                 <label for="form-klaukurs"><img src="/literatur/assets/klaukurs.png" alt="Klempner - Praxis im Recht"></label>
                 <label for="form-nomnom"><img src="/literatur/assets/nomnom.png" alt="NOMNOM-Kommentar"></label>
                 <label for="form-nomnom_rot"><img src="/literatur/assets/nomnom_rot.png" alt="NOMNOM-Kommentar (rot)"></label>
+                <label for="form-njw"><img src="/literatur/assets/njw.png" alt="I.C.H. KACK NJW"></label>
             </div>
             <div class="lit-form-area">
                 <div class="lit-form-subarea">
@@ -92,6 +93,36 @@
                     <input placeholder="Buchtitel" data-field="title">
                     <input placeholder="Inhaltsangaben" data-field="contents">
                     <input placeholder="Auflage" data-field="edition">
+                    <button class="search-btn">Suchen</button>
+                </div>
+                <div class="lit-form-subarea" data-section="njw">
+                    <input type="radio" name="template" id="form-njw" value="njw" class="form-choice">
+                    <h3>I.C.H. KACK NJW (Sonderausgabe)</h3>
+
+                    <input placeholder="Titel der Sonderausgabe" data-field="title">
+                    <input placeholder="Monat und Jahr" data-field="year">
+
+                    <p>Mit den folgenden Einzelbeiträgen:</p>
+
+                    <div class="form-journal-grid">
+                        <div class="form-journal-grid-row">
+                            <input placeholder="Autor*in" data-field="author-1" class="author-field">
+                            <input placeholder="Aufsatztitel" data-field="title-1">
+                        </div>
+                        <div class="form-journal-grid-row">
+                            <input placeholder="Autor*in" data-field="author-2" class="author-field">
+                            <input placeholder="Aufsatztitel" data-field="title-2">
+                        </div>
+                        <div class="form-journal-grid-row">
+                            <input placeholder="Autor*in" data-field="author-3" class="author-field">
+                            <input placeholder="Aufsatztitel" data-field="title-3">
+                        </div>
+                        <div class="form-journal-grid-row">
+                            <input placeholder="Autor*in" data-field="author-4" class="author-field">
+                            <input placeholder="Aufsatztitel" data-field="title-4">
+                        </div>
+                    </div>
+
                     <button class="search-btn">Suchen</button>
                 </div>
 
