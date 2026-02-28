@@ -21,41 +21,96 @@
 
         <h2>Geben Sie hier an, welches Buch Sie suchen:</h2>
 
-        <div class="form">
-            <select id="template">
-                <option value="" selected disabled>Wählen Sie eine Reihe...</option>
-                <option value="beck_dtv">Back-Rezepte im TV</option>
-                <option value="beck_rot">ICH BACK</option>
-                <option value="beck_gelb">Back'sche Reibe</option>
-                <option value="klaukurs">Klempner - Praxis im Recht</option>
-                <option value="nomnom">NOMNOM-Kommentar</option>
-            </select>
-            <input placeholder="Autor*innen" id="authors">
-            <input placeholder="Buchtitel" id="title">
-            <input placeholder="ggf. Kommentar/Untertitel" id="subtitle">
-            <input placeholder="ggf. Auflage" id="edition">
-            <input placeholder="ggf. Jahreszahl" id="year">
-            <p>Für unsere Reihe <strong>Back-Rezepte im TV</strong> benötigen wir außerdem die folgenden Angaben</p>
-            <input placeholder="Abkürzungen 1, 2 und 3 (getrennt durch '|')" id="abbrevs">
-            <input placeholder="Inhaltsangaben (getrennt durch '|')" id="contents">
-            <button id="btn">Suchen</button>
-        </div>
-
-        <div class="reply-area hidden">
-            <h2>Ihr Suchergebnis:</h2>
-            <div class="loading now">
-                <span class="loading-icon"></span>
-                <div class="wait-line">Bitte haben Sie einen Moment Geduld.<br>Wir suchen gerade Ihr Buch...</div>
+        <div class="lit-form">
+            <div class="lit-form-sidebar">
+                <label for="form-beck_dtv"><img src="/literatur/assets/beck_dtv.png" alt="Back-Rezepte im TV"></label>
+                <label for="form-beck_rot"><img src="/literatur/assets/beck_rot.png" alt="ICH BACK"></label>
+                <label for="form-beck_gelb"><img src="/literatur/assets/beck_gelb.png" alt="Back'sche Reibe"></label>
+                <label for="form-klaukurs"><img src="/literatur/assets/klaukurs.png" alt="Klempner - Praxis im Recht"></label>
+                <label for="form-nomnom"><img src="/literatur/assets/nomnom.png" alt="NOMNOM-Kommentar"></label>
+                <label for="form-nomnom_rot"><img src="/literatur/assets/nomnom_rot.png" alt="NOMNOM-Kommentar (rot)"></label>
             </div>
-            <div class="answer">
-                <h3>Wir haben das Buch gefunden! \o/</h3>
+            <div class="lit-form-area">
+                <div class="lit-form-subarea">
+                    <input type="radio" name="template" id="form-zero" value="" class="form-choice" checked>
+                    <p>Bitte wählen Sie einen Verlag/eine Reihe links aus.</p>
+                </div>
+                <div class="lit-form-subarea" data-section="beck_dtv">
+                    <input type="radio" name="template" id="form-beck_dtv" value="beck_dtv" class="form-choice">
+                    <h3>Back-Rezepte im TV</h3>
 
-                <canvas width="750" height="1000" id="canv" style="width: 500px; height: auto;"></canvas>
+                    <input placeholder="Abkürzungen 1, 2 und 3 (getrennt durch '|')" data-field="abbrevs">
+                    <input placeholder="Buchtitel" data-field="title">
+                    <input placeholder="Untertitel" data-field="subtitle">
+                    <input placeholder="Inhaltsangaben (getrennt durch '|')" data-field="contents">
+                    <input placeholder="Auflage" data-field="edition">
+                    <input placeholder="Jahreszahl" data-field="year">
+                    <button class="search-btn">Suchen</button>
+                </div>
+                <div class="lit-form-subarea" data-section="beck_rot">
+                    <input type="radio" name="template" id="form-beck_rot" value="beck_rot" class="form-choice">
+                    <h3>ICH BACK</h3>
 
-                <div class="share">
-                    <h4>Gefunden, was Sie suchen?</h4>
-                    <a class="tweet-btn" id="copy">Buch kopieren</a>
-                    <a class="tweet-btn" id="download">Buch herunterladen</a>
+                    <input placeholder="Autor*innen" data-field="authors">
+                    <input placeholder="Buchtitel" data-field="title">
+                    <input placeholder="Untertitel" data-field="subtitle">
+                    <button class="search-btn">Suchen</button>
+                </div>
+                <div class="lit-form-subarea" data-section="beck_gelb">
+                    <input type="radio" name="template" id="form-beck_gelb" value="beck_gelb" class="form-choice">
+                    <h3>Back'sche Reibe</h3>
+
+                    <input placeholder="Autor*innen" data-field="authors">
+                    <input placeholder="Buchtitel" data-field="title">
+                    <input placeholder="Untertitel" data-field="subtitle">
+                    <button class="search-btn">Suchen</button>
+                </div>
+                <div class="lit-form-subarea" data-section="klaukurs">
+                    <input type="radio" name="template" id="form-klaukurs" value="klaukurs" class="form-choice">
+                    <h3>Klempner - Praxis im Recht</h3>
+
+                    <input placeholder="Autor*innen" data-field="authors">
+                    <input placeholder="Buchtitel" data-field="title">
+                    <input placeholder="Kommentar/Untertitel" data-field="subtitle">
+                    <input placeholder="ggf. Auflage" data-field="edition">
+                    <button class="search-btn">Suchen</button>
+                </div>
+                <div class="lit-form-subarea" data-section="nomnom">
+                    <input type="radio" name="template" id="form-nomnom" value="nomnom" class="form-choice">
+                    <h3>NOMNOM-Kommentar</h3>
+
+                    <input placeholder="Autor*innen" data-field="authors">
+                    <input placeholder="Buchtitel" data-field="title">
+                    <input placeholder="Auflage" data-field="edition">
+                    <button class="search-btn">Suchen</button>
+                </div>
+                <div class="lit-form-subarea" data-section="nomnom_rot">
+                    <input type="radio" name="template" id="form-nomnom_rot" value="nomnom_rot" class="form-choice">
+                    <h3>NOMNOM-Kommentar (rot)</h3>
+
+                    <input placeholder="Autor*innen" data-field="authors">
+                    <input placeholder="Buchtitel" data-field="title">
+                    <input placeholder="Inhaltsangaben" data-field="contents">
+                    <input placeholder="Auflage" data-field="edition">
+                    <button class="search-btn">Suchen</button>
+                </div>
+
+                <div class="reply-area hidden">
+                    <div class="loading now">
+                        <span class="loading-icon"></span>
+                        <div class="wait-line">Bitte haben Sie einen Moment Geduld.<br>Wir suchen gerade Ihr Buch...</div>
+                    </div>
+                    <div class="answer">
+                        <h3>Wir haben das Buch gefunden! \o/</h3>
+
+                        <canvas width="750" height="1000" id="canv" style="width: 500px; height: auto;"></canvas>
+
+                        <div class="share">
+                            <h4>Gefunden, was Sie suchen?</h4>
+                            <a class="tweet-btn" id="copy">Buch kopieren</a>
+                            <a class="tweet-btn" id="download">Buch herunterladen</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

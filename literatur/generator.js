@@ -1,18 +1,16 @@
 var canv = document.getElementById('canv')
 var ctx = canv.getContext('2d')
 
+var authors
+var title
+var subtitle
+var edition
+var year
+var abbrevs
+var contents
+
 const $ = document.querySelector.bind(document);
 
-var template = document.getElementById('template')
-var authors = document.getElementById('authors')
-var title = document.getElementById('title')
-var subtitle = document.getElementById('subtitle')
-var edition = document.getElementById('edition')
-var year = document.getElementById('year')
-var abbrevs = document.getElementById('abbrevs')
-var contents = document.getElementById('contents')
-
-var btn = document.getElementById('btn')
 var copybtn = document.getElementById('copy')
 var dlbtn = document.getElementById('download')
 
@@ -143,10 +141,30 @@ let generators = {
             write_wrapped_text(title.value, 50, 475, 450, 'bold 70px Arial', 80, '#ffffff', 'left')
             write_text(edition.value, 70, 762, 'bold 25px Arial', '#ffffff', 'left')
         })
+    },
+    nomnom_rot: () => {
+        load_base('/literatur/templates/nomnom_rot.png', () => {
+            write_text(authors.value, 50, 430, 'bold 55px Arial', '#aaaaaa', 'left')
+            write_wrapped_text(title.value, 50, 675, 450, 'bold 100px Arial', 105, '#ffffff', 'left')
+            write_wrapped_text(contents.value, 50, 875, 900, 'bold 28px Arial', 40, '#ffffff', 'left')
+            write_text(edition.value, 70, 1050, 'bold 40px Arial', '#ffffff', 'left')
+        })
     }
 }
 
-btn.addEventListener('click', () => {
+document.querySelectorAll('.search-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+    let template = document.querySelector('[name="template"]:checked')
+    let section = document.querySelector('[data-section="' + template.value + '"]')
+
+    authors = section.querySelector('[data-field="authors"]')
+    title = section.querySelector('[data-field="title"]')
+    subtitle = section.querySelector('[data-field="subtitle"]')
+    edition = section.querySelector('[data-field="edition"]')
+    year = section.querySelector('[data-field="year"]')
+    abbrevs = section.querySelector('[data-field="abbrevs"]')
+    contents = section.querySelector('[data-field="contents"]')
+
     ctx.clearRect(0, 0, canv.width, canv.height);
     generators[template.value]()
 
@@ -158,6 +176,7 @@ btn.addEventListener('click', () => {
     window.setTimeout(() => {
         $('.loading').classList.remove('now');
     }, time_key * 2);
+})
 })
 
 copybtn.addEventListener('click', () => {
