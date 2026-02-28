@@ -213,8 +213,8 @@ h4 {
 }
 
 .lit-form .lit-form-sidebar {
-    flex-grow: 0;
     width: 275px;
+    min-width: 275px;
     max-width: 275px;
 
     display: flex;
